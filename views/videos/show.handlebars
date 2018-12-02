@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VidBits</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+    <link rel='stylesheet' href='stylesheets/style.css'>
+</head>
+<body>
+{{!-- <div class="title-container">
+    <div class="title-logo">
+        <a href="/"><img src="img/logo.svg" alt=""></a>
+    </div>
+</div> --}}
+<div class="contents-container">
+    <div class="video-card">
+
+        <div class="video-title" id="video-title">
+            <h1>{{video.title}}</h1>
+        </div>
+
+        <iframe class="video-player" id="ytplayer" type="text/html" width="640" height="360"
+                src="{{video.videoUrl}}"
+                frameborder="0"></iframe>
+
+        <div class="video-description">
+            <p id="video-description">{{video.description}}</p>
+        </div>
+
+        <div class="video-edit">
+            <a href="/videos/{{video._id}}/edit" id="edit">Edit this video</a>
+        </div>
+        <div class="video-delete">
+            <form id="delete-{{item._id}}" class="delete-form" action="/videos/{{video._id}}/deletions" method="post">
+                <img src="/img/delete.svg" alt="delete">
+                <input type="submit" id="delete" value="Delete">
+            </form>
+        </div>
+    </div>
+</div>
+<a href="/videos/create">Add a video</a>
+</body>
+</html>
